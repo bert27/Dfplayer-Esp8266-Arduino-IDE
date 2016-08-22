@@ -1,0 +1,21 @@
+//Code:
+
+#include <DFPlayer_Mini_Mp3.h>
+#include <SoftwareSerial.h>
+int tiempo_cancion=2000;
+#define serie D5
+
+SoftwareSerial mp3Serial(D1, D2); // RX, TX
+
+void setup () {
+  pinMode(serie, INPUT);
+  Serial.begin (115200);
+  Serial.println("Velocidad serie soft-mp3");
+  mp3Serial.begin (9600);
+  Serial.println("Inicializa mp3");
+  mp3_set_serial (mp3Serial);  
+  // Espera de Arranque
+  delay(1000); 
+  //Volumen de 0 a 30
+  mp3_volumen (30);
+}
