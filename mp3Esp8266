@@ -17,5 +17,5 @@ void setup () {
   // Espera de Arranque
   delay(1000); 
   //Volumen de 0 a 30
-  mp3_volumen (30);
+  mp3_set_volume (30);
 }
